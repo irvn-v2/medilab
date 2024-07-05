@@ -1,0 +1,54 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+
+     <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row gy-4 gx-5">
+
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox pulsating-play-btn"></a>
+          </div>
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <h3>About Us</h3>
+            <p>
+              Welcome to Medilab Hospital, where compassionate care meets cutting-edge technology. Our hospital is a premier healthcare institution dedicated to providing exceptional medical services to our community. Situated in the heart of the city, we offer a comprehensive range of healthcare services to meet all your medical needs.
+            </p>
+            <ul>
+              <li>
+                <i class="fa-solid fa-vial-circle-check"></i>
+                <div>
+                  <h5>Our Mission</h5>
+                  <p>Our mission is to deliver high-quality patient-centered healthcare with a focus on safety, excellence and innovation.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-pump-medical"></i>
+                <div>
+                  <h5>Our Team</h5>
+                  <p>Our team consists of highly skilled and compassionate doctors, nurses, technicians and support staff who work collaboratively to ensure patients receive high quality care.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fa-solid fa-heart-circle-xmark"></i>
+                <div>
+                  <h5>Community Involvement</h5>
+                  <p>We are deeply commited to our community and strive to make a positive impact through health education, outreach programs and free health camps.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+{% endblock %}
