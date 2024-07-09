@@ -16,3 +16,22 @@ def services(request):
 
 def departments(request):
     return render(request, 'departments.html')
+
+def appointments(request):
+    if request.method == 'POST':
+        Appointments = appointments(name=request.POST['name'],
+                                    email=request.POST['email'],
+                                    phone=request.POST['phone'],
+                                    DOB=request.POST['DOB'],
+                                    department=request.POST['department'],
+                                    doctor=request.POST['doctor'],
+                                    message=request.POST['message'])
+
+        Appointments.save()
+    else:
+        return render(request, 'appointments.html')
+
+
+
+
+
