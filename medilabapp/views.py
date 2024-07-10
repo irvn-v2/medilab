@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from medilabapp.models import Appointments
+
 
 # Create your views here.
 
@@ -22,14 +25,23 @@ def appointments(request):
         Appointments = appointments(name=request.POST['name'],
                                     email=request.POST['email'],
                                     phone=request.POST['phone'],
-                                    DOB=request.POST['DOB'],
+                                    date=request.POST['date'],
                                     department=request.POST['department'],
                                     doctor=request.POST['doctor'],
                                     message=request.POST['message'])
 
         Appointments.save()
+        return redirect('appointments/')
     else:
         return render(request, 'appointments.html')
+
+def show(request):
+    data = Appointments.objects.all()
+    return render(request, 'show.html', {'appointment': data})
+
+def delete(request, id):
+    myappointment = appointments.objects.get(id=id)
+    myappointment.delete
 
 
 

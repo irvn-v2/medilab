@@ -20,8 +20,11 @@ class Register(models.Model):
 class Appointments(models.Model):
     name = models.CharField(max_length=250)
     email = models.EmailField()
-    phone = models.IntegerField()
-    DOB = models.CharField(max_length=200)
+    phone = models.CharField(max_length=150)
+    DOB = models.DateField()
     department = models.CharField(max_length=150)
     doctor = models.CharField(max_length=200)
     message = models.TextField()
+
+    def __str__(self):
+        return self.name
