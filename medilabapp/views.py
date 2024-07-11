@@ -39,9 +39,11 @@ def show(request):
     data = Appointments.objects.all()
     return render(request, 'show.html', {'appointment': data})
 
-def delete(request, id):
-    myappointment = appointments.objects.get(id=id)
-    myappointment.delete
+def register(request):
+    return render(request, 'register.html')
+
+def login(request):
+    return render(request, 'login.html')
 
 
 
